@@ -9,6 +9,7 @@
       "@broadcast/*": ["broadcast/*"],
       "@dolphin/*": ["dolphin/*"],
       "@replays/*": ["replays/*"],
+      "@performance/*": ["performance/*"],
       "@settings/*": ["settings/*"],
       "@console/*": ["console/*"],
       "@database/*": ["database/*"]

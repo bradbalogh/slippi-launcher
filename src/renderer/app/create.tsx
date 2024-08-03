@@ -1,6 +1,7 @@
 import "@/styles/styles.scss";
 
 import { ThemeProvider } from "@emotion/react";
+import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import CastOutlinedIcon from "@mui/icons-material/CastOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LiveTvOutlinedIcon from "@mui/icons-material/LiveTvOutlined";
@@ -18,6 +19,7 @@ import { lazyLoadConsoleMirrorPage } from "@/pages/console_mirror/load";
 import { HomePage } from "@/pages/home/home_page";
 import { LoadingPage } from "@/pages/loading/loading_page";
 import { NotFoundPage } from "@/pages/not_found/not_found_page";
+import { lazyLoadPerformancePage } from "@/pages/performance/load";
 import { lazyLoadQuickStartPage } from "@/pages/quick_start/load";
 import { lazyLoadReplaysPage } from "@/pages/replays/load";
 import { lazyLoadSettingsPage } from "@/pages/settings/load";
@@ -35,6 +37,7 @@ export function createApp({ services }: { services: Services }): {
   const { Page: SettingsPage } = lazyLoadSettingsPage();
   const { Page: QuickStartPage } = lazyLoadQuickStartPage();
   const { Page: ReplaysPage } = lazyLoadReplaysPage();
+  const { Page: PerformancePage } = lazyLoadPerformancePage();
   const { Page: SpectatePage } = lazyLoadSpectatePage({ broadcastService: services.broadcastService });
   const { Page: ConsoleMirrorPage } = lazyLoadConsoleMirrorPage();
 
@@ -51,6 +54,12 @@ export function createApp({ services }: { services: Services }): {
       title: "Replays",
       Component: ReplaysPage,
       Icon: SlowMotionVideoIcon,
+    },
+    {
+      subpath: "performance",
+      title: "Performance",
+      Component: PerformancePage,
+      Icon: AutoGraphIcon,
     },
     {
       subpath: "spectate",
